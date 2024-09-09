@@ -1,5 +1,5 @@
 {
-  "name": "@ouyangde/jupyterlab-spreadsheet",
+  "name": "@ouyangde1/jupyterlab-spreadsheet",
   "version": "0.4.2",
   "description": "Adds a spreadsheet viewer to JupyterLab",
   "main": "lib/index.js",
