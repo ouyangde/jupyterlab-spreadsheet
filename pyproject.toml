@@ -1,5 +1,5 @@
 [build-system]
-requires = ["jupyter_packaging~=0.10,<2", "jupyterlab~=3.1"]
+requires = ["jupyter_packaging~=0.10,<2", "jupyterlab>=4.0.0,<5"]
 build-backend = "jupyter_packaging.build_api"
 
 [tool.jupyter-packaging.options]
@@ -10,7 +10,7 @@ ensured-targets = ["jupyterlab-spreadsheet/labextension/static/style.js", "jupyt
 factory = "jupyter_packaging.npm_builder"
 
 [tool.jupyter-packaging.build-args]
-build_cmd = "build:prod"
+build_cmd = "build:lab"
 npm = ["jlpm"]
 
 [tool.check-manifest]
