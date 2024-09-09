@@ -4,10 +4,13 @@
   "description": "Adds a spreadsheet viewer to JupyterLab",
   "main": "lib/index.js",
   "jupyterlab": {
-    "extension": true
+    "extension": true,
+    "outputDir": "jupyterlab-spreadsheet/labextension"
   },
   "scripts": {
     "build": "tsc",
+    "build:lab": "jupyter labextension build .",
+    "install:lab": "jupyter labextension develop . --overwrite",
     "lint": "eslint --ext .ts src/**"
   },
   "keywords": [
@@ -17,27 +20,42 @@
   ],
   "files": [
     "lib/*.js",
-    "style/*.css"
+    "style/*.css",
+    "jupyterlab-spreadsheet/**"
   ],
   "repository": "https://github.com/quigleyj97/jupyterlab-spreadsheet",
-  "author": "Joe Quigley",
+  "homepage": "https://github.com/quigleyj97/jupyterlab-spreadsheet",
+  "author": {
+    "name": "Joe Quigley"
+  },
+  "contributors": [
+    {
+      "name": "Mridul Seth",
+      "email": "github@mriduls.com",
+      "url": "https://mriduls.com"
+    },
+    {
+      "name": "NQuigley02"
+    }
+  ],
   "license": "BSD-3-Clause",
   "private": false,
   "dependencies": {
-    "@jupyterlab/application": "^3.0.4",
-    "@jupyterlab/apputils": "^3.0.3",
-    "@jupyterlab/docregistry": "^3.0.4",
-    "@lumino/coreutils": "^1.8.0",
-    "@lumino/disposable": "^1.7.0",
-    "@lumino/widgets": "^1.23.0",
+    "@jupyterlab/application": "^4.0.0-rc.1",
+    "@jupyterlab/apputils": "^4.0.0-rc.1",
+    "@jupyterlab/docregistry": "^4.0.0-rc.1",
+    "@lumino/coreutils": "^2.1.1",
+    "@lumino/disposable": "^2.1.1",
+    "@lumino/widgets": "^2.1.1",
     "expose-loader": "^3.0.0",
     "jquery": "^3.6.0",
     "jquery-ui": "^1.12.1",
     "rxjs": "^7.2.0",
     "slickgrid": "^2.3.21",
-    "xlsx": "^0.17.0"
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "@jupyterlab/builder": "^4.0.0-rc.1",
     "@types/slickgrid": "^2.1.27",
     "@typescript-eslint/eslint-plugin": "^4.28.0",
     "@typescript-eslint/parser": "^4.28.0",
